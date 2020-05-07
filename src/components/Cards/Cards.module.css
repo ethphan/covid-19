@@ -1,0 +1,25 @@
+.container {
+    margin: 50px 0;
+}
+
+.card {
+    margin: 2% 2% !important;
+    background-color: rgba(237, 252, 250,0.5) !important;
+}
+
+.CountUp {
+    font-size: 2rem;
+    color: red;
+}
+
+.infected {
+    border-bottom: 10px solid rgba(0,0,255,0.5);
+}
+
+.recovered {
+    border-bottom: 10px solid rgba(0,255,0,0.5);
+}
+
+.deaths {
+    border-bottom: 10px solid rgba(255,0,0,0.5);
+}

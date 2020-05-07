@@ -1,11 +1,9 @@
 import React from "react";
 
 import styles from "./Cards.module.css";
+import cx from 'classnames';
 
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import {Card, CardContent, Grid, Typography} from "@material-ui/core";
 import CountUp from "react-countup";
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
@@ -15,7 +13,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justified="center">
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Infected
@@ -25,6 +23,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               end={confirmed.value}
               duration={2}
               separator=","
+              className={styles.CountUp}
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -34,7 +33,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Recoverd
@@ -44,6 +43,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
               end={recovered.value}
               duration={2}
               separator=","
+              className={styles.CountUp}
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
@@ -53,16 +53,17 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              deaths
+              Deaths
             </Typography>
             <CountUp
               start={0}
               end={deaths.value}
               duration={2}
               separator=","
+              className={styles.CountUp}
             />
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
