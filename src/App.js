@@ -26,7 +26,6 @@ class App extends Component {
         console.log(data)
         return (
             <div className={styles.container}>
-                {/* <h1> <span> COVID-19</span><br /> Live Update</h1> */}
                 <img src={corona} alt="logo"  />
                 <Cards data={data} />
                 <CountryPicker handleCountryChange={this.handleCountryChange} />
